@@ -17,6 +17,8 @@ const noteColumns = 'id, notebook_id, title, body, is_favorite, created_at, upda
 
 // PostgREST devolve este código quando o range pedido passa do total de linhas.
 const rangeNotSatisfiable = 'PGRST103';
+// Postgres devolve este código quando o id na URL não é um uuid válido.
+const invalidTextRepresentation = '22P02';
 
 export function toNote(row: NoteRow): Note {
   return {
@@ -82,6 +84,23 @@ export async function getNotes(input: {
     throw new Error(error.message);
   }
   return { notes: data.map(toNote), total: count ?? 0 };
+}
+
+export async function getNote(input: { notebookId: string; id: string }): Promise<Note | null> {
+  const { data, error } = await getSupabase()
+    .from('notes')
+    .select(noteColumns)
+    .eq('id', input.id)
+    .eq('notebook_id', input.notebookId)
+    .maybeSingle();
+
+  if (error?.code === invalidTextRepresentation) {
+    return null;
+  }
+  if (error) {
+    throw new Error(error.message);
+  }
+  return data ? toNote(data) : null;
 }
 
 export async function createNote(input: { notebookId: string; title: string }): Promise<Note> {
