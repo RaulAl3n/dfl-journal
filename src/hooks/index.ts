@@ -7,3 +7,8 @@ export { useCreateNotebook } from './useCreateNotebook';
 export { useToggleNotebookFavorite } from './useToggleNotebookFavorite';
 export { useUpdateNotebook } from './useUpdateNotebook';
 export { useDeleteNotebook } from './useDeleteNotebook';
+export { useGetNotes } from './useGetNotes';
+export { useCreateNote } from './useCreateNote';
+export { useUpdateNote } from './useUpdateNote';
+export { useDeleteNote } from './useDeleteNote';
+export { useToggleNoteFavorite } from './useToggleNoteFavorite';
