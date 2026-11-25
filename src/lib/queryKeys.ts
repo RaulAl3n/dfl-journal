@@ -13,4 +13,7 @@ export const queryKeys = {
       ['notes', { notebookId, page, query }] as const,
     byId: (id: string) => ['notes', id] as const,
   },
+  tasks: {
+    byNote: (noteId: string) => ['tasks', { noteId }] as const,
+  },
 } as const;
