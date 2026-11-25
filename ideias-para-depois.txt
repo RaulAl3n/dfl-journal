@@ -1,0 +1,6 @@
+1. Fazer uma funcionalidade de arrastar o mouse e mudar a ordem dos notebooks.
+2. Mudar a cor do tema visual.
+3. Descricao para notebook (opcional)
+4. Mudar cor do nome dos notebooks.
+5. Icone nos noteboks.
+6. Opcao de download do texto do notebook.
