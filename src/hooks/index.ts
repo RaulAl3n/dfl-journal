@@ -12,3 +12,7 @@ export { useCreateNote } from './useCreateNote';
 export { useUpdateNote } from './useUpdateNote';
 export { useDeleteNote } from './useDeleteNote';
 export { useToggleNoteFavorite } from './useToggleNoteFavorite';
+export { useGetNote } from './useGetNote';
+export { useGetTasks } from './useGetTasks';
+export { useCreateTask } from './useCreateTask';
+export { useToggleTask } from './useToggleTask';
